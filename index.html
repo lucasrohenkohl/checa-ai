@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="js/theme.js" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
 <input class="theme-switch" type="checkbox" id="theme-toggle">
@@ -54,8 +55,8 @@
             <div class="card hero-console">
                 <div class="console-top"><span class="console-title">Verifique um endereço</span><span class="console-status">Pronto para checar</span></div>
                 <div class="url-row">
-                    <input type="url" placeholder="https://exemplo.com.br" aria-label="Endereço do site para análise">
-                    <a class="btn btn-primary" href="analisar.html#resultado">Checar</a>
+                    <input id="home-url" type="url" placeholder="https://exemplo.com.br" aria-label="Endereço do site para análise">
+                    <button type="button" class="btn btn-primary" id="home-check">Checar</button>
                 </div>
                 <div class="mode-picker">
                     <a class="mode-card primary" href="analisar.html#resultado"><span class="mode-kicker">Modo normal</span><strong>Receber o parecer na tela</strong><span>Veja o resultado do Vigia, os sinais encontrados e o motivo da classificação.</span></a>

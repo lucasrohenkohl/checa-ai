@@ -18,6 +18,10 @@ Projeto multidisciplinar de conscientização sobre golpes, sites enganosos, phi
 - `css/app.css` — estilos das páginas internas.
 - `js/theme.js` — persistência do tema claro/escuro (localStorage).
 - `js/banco.js` — carrega os registros da API e controla busca e filtros.
+- `js/vigia.js` — envia o endereço para o analisador e atualiza o parecer.
+- `js/comunidade.js` — lista e publica perguntas no banco.
+- `js/pulseira.js` — alterna os estados da pulseira.
+- `js/index.js` — input da página inicial leva o endereço para o Vigia.
 - `assets/img/` — imagens fornecidas para os casos em destaque.
 
 ## Como rodar com Docker
@@ -52,6 +56,9 @@ O banco é SQLite, com a tabela `dominios`. O arquivo `data/dados.db` é criado 
 - `GET /api/domains` — lista todos os registros.
 - `GET /api/domains?q=termo` — busca por domínio ou descrição.
 - `GET /api/domains?filtro=confiavel` — filtros: `confiavel`, `atencao`, `fraude`, `phishing`, `compras`.
+- `GET /api/analisar?url=endereco` — analisa um endereço e devolve o parecer (verde/amarelo/vermelho), pontuação, métricas, sinais e votos.
+- `GET /api/perguntas` — lista as perguntas da comunidade.
+- `POST /api/perguntas` — publica uma pergunta (`{"titulo": "...", "contexto": "..."}`).
 
 Resposta:
 
@@ -81,4 +88,4 @@ O site usa HTML, CSS e uma camada mínima de JavaScript. O layout é responsivo 
 
 ## Observação de implementação
 
-Os campos do Vigia e da comunidade desta entrega são interfaces demonstrativas. O banco de dados (`banco.html`) já é alimentado por uma API real. A arquitetura visual foi preparada para que novas camadas de backend/API possam alimentar as mesmas telas sem precisar reconstruir o design.
+O banco de dados (`banco.html`), o Vigia (`analisar.html`) e a comunidade (`comunidade.html`) são alimentados por API real com SQLite. O Vigia cruza o endereço com os registros do banco e aplica heurísticas de domínio (IP, extensões e termos suspeitos, imitação de marca). A comunidade permite publicar perguntas que ficam salvas no banco.

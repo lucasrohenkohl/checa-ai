@@ -174,3 +174,14 @@
 
 .result-count { margin-top: 15px; color: var(--ink-soft); font-size: .78rem; font-weight: 900; }
 .empty-state { grid-column: 1 / -1; padding: 30px 20px; text-align: center; color: var(--ink-soft); font-size: .9rem; border: 1px dashed var(--line); border-radius: var(--radius-sm); }
+
+.bracelet-display.bracelet-verde { background: var(--green); }
+.bracelet-display.bracelet-amarelo { background: var(--orange); }
+.bracelet-display.bracelet-vermelho { background: var(--red); }
+.signal-card[data-estado] { cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.signal-card[data-estado]:hover { transform: translateY(-2px); }
+.signal-card[data-estado].ativo { border-color: var(--blue); box-shadow: var(--shadow-strong); }
+
+.form-feedback { margin-top: 12px; font-size: .82rem; font-weight: 900; }
+.form-feedback.ok { color: var(--green); }
+.form-feedback.error { color: var(--red); }

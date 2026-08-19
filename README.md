@@ -1,4 +1,4 @@
-# Checa aí — versão 2.0
+# Checa aí — versão 3.0
 
 Projeto multidisciplinar de conscientização sobre golpes, sites enganosos, phishing e riscos de compartilhamento de dados.
 

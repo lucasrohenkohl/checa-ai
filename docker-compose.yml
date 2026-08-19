@@ -2,7 +2,7 @@ services:
   checaai:
     build: .
     ports:
-      - "80:5000"
+      - "5000:5000"
     volumes:
       - checaai-dados:/app/data
 volumes:

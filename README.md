@@ -11,7 +11,7 @@ Projeto multidisciplinar de conscientização sobre golpes, sites enganosos, phi
 - `pulseira.html` — modo pulseira.
 - `server.js` — servidor Node (sem dependências) que serve as páginas e a API do banco.
 - `data/dados.db` — banco SQLite criado automaticamente no primeiro acesso (a pasta `data/` não vai para o Git).
-- `docker-compose.yml` — expõe a porta 80 e mantém o banco em um volume persistente.
+- `docker-compose.yml` — expõe a porta 5000 e mantém o banco em um volume persistente.
 - `css/reset.css` — reset base.
 - `css/base.css` — sistema visual compartilhado.
 - `css/home.css` — estilos da página inicial.
@@ -26,7 +26,7 @@ Projeto multidisciplinar de conscientização sobre golpes, sites enganosos, phi
 docker compose up --build
 ```
 
-Depois abra `http://localhost` (porta 80) — ou o IP do servidor, se estiver em uma máquina remota.
+Depois abra `http://localhost:5000` — ou o IP do servidor, se estiver em uma máquina remota.
 
 Sem Docker, basta ter Node.js 24+ instalado:
 

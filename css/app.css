@@ -39,6 +39,7 @@
 .analysis-label { display: block; margin-top: 8px; font-size: .69rem; font-weight: 950; letter-spacing: .11em; text-transform: uppercase; color: var(--green); }
 .analysis-verdict { max-width: 540px; margin-top: 8px; font-size: clamp(2rem, 4vw, 3.35rem); line-height: .92; letter-spacing: -.055em; font-weight: 950; }
 .analysis-copy { position: relative; z-index: 1; max-width: 620px; margin-top: 12px; color: var(--ink-soft); }
+.analysis-meta { position: relative; z-index: 1; margin-top: 14px; font-size: .73rem; font-weight: 950; color: var(--ink-soft); }
 .score-line { position: relative; z-index: 1; display: flex; align-items: center; gap: 13px; margin-top: 20px; }
 .score-number { font-size: 1rem; font-weight: 950; color: var(--green); }
 .score-track { flex: 1; height: 9px; overflow: hidden; border-radius: 999px; background: var(--surface-2); }

@@ -122,7 +122,8 @@ function lerCorpo(req) {
 
 const TERMOS_SUSPEITOS = ["beneficio", "reembolso", "rastreio", "seguranca", "verificacao", "atualizacao", "atendimento", "login", "conta", "pix", "gratis", "urgente", "oferta", "sorteio", "premio", "taxa", "cadastro", "boleto"];
 const MARCAS = ["caixa", "banco", "bradesco", "santander", "itau", "nubank", "inter", "mercadolivre", "americanas", "magazine", "loja", "prefeitura", "claro", "vivo"];
-const TLD_SUSPEITOS = [".site", ".xyz", ".top", ".click", ".link", ".tk", ".ml", ".ga", ".cf", ".info", ".biz"];
+const TLD_SUSPEITOS = [".site", ".xyz", ".top", ".click", ".link", ".tk", ".ml", ".ga", ".cf", ".info", ".biz", ".online", ".store", ".shop", ".vip", ".live", ".club", ".fake"];
+const TLD_OFICIAIS = [".com", ".com.br", ".net", ".org", ".gov.br", ".edu.br", ".br"];
 const TERMOS_PRESSAO = ["urgente", "oferta", "promo", "beneficio", "reembolso", "sorteio", "premio", "gratis", "taxa", "cadastro"];
 
 function analisar(url) {
@@ -207,9 +208,15 @@ function analisar(url) {
       sinais.push({ titulo: "Termos suspeitos no domínio", texto: `O endereço contém termos como ${termos.slice(0, 3).join(", ")}.`, classe, badge });
     }
     if (marca && !tld.includes("gov")) {
-      score -= 25;
-      metrica.dominio = { nome: "Domínio e identidade", valor: "pode imitar marca", classe: "bad" };
-      sinais.push({ titulo: "Possível imitação de marca", texto: `O nome usa uma marca conhecida (${marca}) fora do endereço oficial.`, classe: "bad", badge: "crítico" });
+      if (!TLD_OFICIAIS.includes(tld.toLowerCase())) {
+        score -= 55;
+        metrica.dominio = { nome: "Domínio e identidade", valor: "imita marca", classe: "bad" };
+        sinais.push({ titulo: "Imitação de marca", texto: `O nome usa a marca ${marca} em uma extensão não oficial — padrão comum de phishing.`, classe: "bad", badge: "crítico" });
+      } else {
+        score -= 20;
+        metrica.dominio = { nome: "Domínio e identidade", valor: "confira a marca", classe: "warn" };
+        sinais.push({ titulo: "Semelhança com marca", texto: `O nome se aproxima da marca ${marca}; confirme o endereço oficial antes de informar dados.`, classe: "warn", badge: "atenção" });
+      }
     }
     if (pressao.length) {
       score -= Math.min(pressao.length * 8, 20);
@@ -269,6 +276,8 @@ function analisar(url) {
     badgeClass,
     score,
     copy,
+    fonte: reg ? "banco de dados + bot Vigia" : "bot Vigia",
+    comunidade: "não validado pela comunidade ainda",
     metricas: [metrica.dominio, metrica.conexao, metrica.pressao, metrica.historico, metrica.dados],
     sinais: sinais.slice(0, 3),
     votos,

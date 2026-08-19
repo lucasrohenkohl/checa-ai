@@ -20,6 +20,7 @@
     var scoreTrack = document.getElementById("score-track");
     var metricList = document.getElementById("metric-list");
     var signalGrid = document.getElementById("signal-grid");
+    var meta = document.getElementById("analysis-meta");
 
     if (verdict) verdict.textContent = d.verdict;
     if (badge) {
@@ -27,6 +28,7 @@
       badge.textContent = d.label;
     }
     if (copy) copy.textContent = d.copy;
+    if (meta) meta.textContent = "Análise: " + d.fonte + " · Comunidade: " + d.comunidade;
     if (scoreNumber) scoreNumber.textContent = d.score + " / 100";
     if (scoreTrack) scoreTrack.style.width = d.score + "%";
     if (metricList) {

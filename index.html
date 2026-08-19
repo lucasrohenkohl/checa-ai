@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checa aí — uma central para conferir sites, sinais de golpe e dúvidas de segurança digital.">
+    <title>Checa aí — Antes de clicar, cheque.</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/theme.js" defer></script>
+</head>
+<body>
+<input class="theme-switch" type="checkbox" id="theme-toggle">
+<script>try{if(localStorage.getItem("checaai-theme")==="dark"){document.getElementById("theme-toggle").checked=true;}}catch(e){}</script>
+<div class="site-shell">
+<header class="header">
+    <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Checa aí</span></a>
+        <nav class="nav" aria-label="Navegação principal">
+            <a class="active" href="index.html">Início</a><a href="analisar.html">Bot</a><a href="banco.html">Banco</a><a href="comunidade.html">Comunidade</a><a href="pulseira.html">Pulseira</a>
+        </nav>
+        <div class="header-tools">
+            <label class="theme-toggle" for="theme-toggle"><span class="light-label">Tema escuro</span><span class="dark-label">Tema claro</span></label>
+            <a class="header-action" href="analisar.html">Checar site</a>
+        </div>
+    </div>
+    <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-links" aria-label="Navegação mobile">
+            <a href="index.html">Início</a><a href="analisar.html">Bot</a><a href="banco.html">Banco de dados</a><a href="comunidade.html">Comunidade</a><a href="pulseira.html">Pulseira</a><a href="analisar.html">Checar site</a>
+        </nav>
+    </details>
+</header>
+
+<div class="ticker" aria-label="Casos em destaque">
+    <div class="ticker-inner"><span class="ticker-label">EM FOCO</span><div class="ticker-window"><div class="ticker-track">
+        <span>Morador de Entre Rios do Oeste perde mais de R$ 31 mil em golpe de liberação de benefício.</span>
+        <span>Empresa sofre prejuízo após golpe de falsos compradores de sucata.</span>
+        <span>Morador perde R$ 3,5 mil em golpe durante compra de carro anunciado na internet.</span>
+        <span>Antes de confiar, confira o endereço, o contexto e a origem da oferta.</span>
+        <span>Morador de Entre Rios do Oeste perde mais de R$ 31 mil em golpe de liberação de benefício.</span>
+    </div></div></div>
+</div>
+
+<main>
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <span class="eyebrow">Verificação digital</span>
+            <h1 class="display">Antes de clicar, <span style="color:var(--blue)">cheque.</span></h1>
+            <p class="hero-lede">O Checa aí junta análise, registros e pessoas para ajudar você a descobrir se um site merece confiança antes de entregar dados, dinheiro ou atenção.</p>
+
+            <div class="card hero-console">
+                <div class="console-top"><span class="console-title">Verifique um endereço</span><span class="console-status">Pronto para checar</span></div>
+                <div class="url-row">
+                    <input type="url" placeholder="https://exemplo.com.br" aria-label="Endereço do site para análise">
+                    <a class="btn btn-primary" href="analisar.html#resultado">Checar</a>
+                </div>
+                <div class="mode-picker">
+                    <a class="mode-card primary" href="analisar.html#resultado"><span class="mode-kicker">Modo normal</span><strong>Receber o parecer na tela</strong><span>Veja o resultado do Vigia, os sinais encontrados e o motivo da classificação.</span></a>
+                    <a class="mode-card" href="pulseira.html"><span class="mode-kicker">Modo pulseira</span><strong>Receber o sinal no pulso</strong><span>A mesma análise pode ser representada por um alerta luminoso na pulseira.</span></a>
+                </div>
+            </div>
+            <div class="btn-row" style="margin-top:14px"><a class="btn btn-dark" href="analisar.html">Conhecer o Vigia</a><a class="btn btn-secondary" href="banco.html">Pesquisar no banco</a></div>
+        </div>
+
+        <div class="hero-side">
+            <article class="card signal-card">
+                <div class="signal-code"><div><span class="eyebrow">Parecer do Vigia</span><div class="signal-status status-green">VERDE</div><span class="signal-chip">Baixo risco</span></div></div>
+                <p class="signal-note">A classificação não aparece sozinha: o resultado vem acompanhado dos sinais que justificam a leitura.</p>
+                <div class="quick-check"><span class="quick-dot"></span><div><strong>confiabilidade do endereço</strong><span>domínio compatível com a marca analisada</span></div><span class="quick-score">OK</span></div>
+            </article>
+            <article class="card rule-card"><span class="eyebrow" style="color:var(--red)">Regra simples</span><h2>Se alguém pede pressa, pare.</h2><p>Urgência, promessa fácil, pagamento antecipado e páginas que imitam marcas conhecidas são motivos para desacelerar.</p></article>
+        </div>
+    </div>
+</section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">O sistema</span><h2 class="section-title" style="margin-top:10px">Três caminhos. Uma decisão melhor.</h2></div><p>Você pode consultar um endereço, pedir uma análise automática ou levar a dúvida para a comunidade. Cada parte responde a uma etapa diferente da verificação.</p></div>
+<div class="tools-grid">
+    <article class="card tool-card"><div><span class="tool-num">01 / BANCO</span><h3>Banco de dados</h3><p>Registros de domínios, ocorrências, padrões de golpe e sinais que ajudam a comparar uma oferta com referências conhecidas.</p></div><a class="tool-link" href="banco.html">Consultar registros</a></article>
+    <article class="card tool-card"><div><span class="tool-num">02 / BOT</span><h3>Vigia</h3><p>Analisa o endereço e organiza os indícios em um parecer legível, com verde, amarelo ou vermelho e explicação do porquê.</p></div><a class="tool-link" href="analisar.html">Abrir análise</a></article>
+    <article class="card tool-card"><div><span class="tool-num">03 / COMUNIDADE</span><h3>Olhar humano</h3><p>Perguntas, respostas e voluntários ajudam quando o contexto é maior que o que uma análise automática consegue enxergar.</p></div><a class="tool-link" href="comunidade.html">Abrir comunidade</a></article>
+</div></div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow" style="color:var(--red)">Casos em foco</span><h2 class="section-title" style="margin-top:10px">Golpes reais começam com decisões comuns.</h2></div></div>
+<div class="story-grid">
+    <article class="card story-card featured"><img src="assets/img/caso-inss.jpg" alt="Notícia sobre golpe de liberação de benefício do INSS"><div class="story-body"><div class="story-meta">Liberação de benefício</div><h3>Morador de Entre Rios do Oeste perde mais de R$ 31 mil em golpe de liberação de benefício.</h3><p>Um exemplo de como uma situação aparentemente oficial pode ser usada para criar urgência e obter dinheiro ou dados.</p></div></article>
+    <article class="card story-card"><img src="assets/img/caso-sucata.jpg" alt="Notícia sobre falsos compradores de sucata"><div class="story-body"><div class="story-meta">Falsos compradores</div><h3>Uma venda normal também pode virar prejuízo.</h3><p>Não é apenas o site que importa: identidade, contato e forma de pagamento fazem parte do contexto.</p></div></article>
+    <article class="card story-card"><img src="assets/img/caso-carro.jpg" alt="Notícia sobre golpe em compra de carro pela internet"><div class="story-body"><div class="story-meta">Compra online</div><h3>Preço baixo e pressa merecem uma segunda olhada.</h3><p>Antes de transferir dinheiro, vale conferir a origem do anúncio e a identidade de quem está vendendo.</p></div></article>
+</div></div></section>
+
+<section class="section"><div class="container"><div class="pulseira-band"><div><span class="eyebrow" style="color:var(--black)">Modo pulseira</span><h3>O resultado pode sair da tela e ir para o pulso.</h3><p>O usuário escolhe receber a classificação do Vigia normalmente na tela ou usar a pulseira como sinal físico da mesma leitura.</p><div class="btn-row" style="margin-top:17px"><a class="btn btn-dark" href="pulseira.html">Ver modo pulseira</a></div></div><div class="pulseira-visual" aria-hidden="true"></div></div></div></section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div><a class="brand" href="index.html"><span class="brand-mark"></span><span>Checa aí</span></a><p class="footer-note">Antes de entregar dados, dinheiro ou confiança, confira.</p></div><div><h3>Explorar</h3><p><a href="analisar.html">Vigia</a></p><p><a href="banco.html">Banco de dados</a></p><p><a href="comunidade.html">Comunidade</a></p></div><div><h3>Saída</h3><p><a href="pulseira.html">Modo pulseira</a></p></div></div></footer>
+</div>
+</body>
+</html>
